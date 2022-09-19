@@ -111,6 +111,7 @@ class Transfer(models.Model):
 class Interest(models.Model):
     date = models.DateTimeField(auto_now_add=True)
 
+
     account = models.ForeignKey(
         Account,
         on_delete=models.CASCADE
