@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<a href="/">Go to back</a>
+<hr/>
+<p> Name : {{ agents.first_name }}</p>
+<p> Surname : {{ agents.last_name }}</p>
+<p>age: {{ agents.age }}</p>
+<p> phone: {{ agents.phone }}</p>
+{% if agents.is_front_agent %}
+  <p> type : front_agent</p>
+{% else %}
+ <p>type: beck_agent</p>
+{% endif %}
+<hr/>
+<a href="{% url 'update_agent' agents.pk %}"> update</a>
+<a href="{% url 'delete_agent' agents.pk %}"> delete</a>
+{% endblock %}
+
