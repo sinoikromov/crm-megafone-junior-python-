@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<a class = 'btn btn-outline-primary my-2' href="{% url 'list_client' %}">Go to back</a>
+<hr/>
+<h2 class="list"> Create a new Problem</h2>
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button class = 'btn btn-primary my-2' type="submit">Submit</button>
+</form>
+{% endblock %}

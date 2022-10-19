@@ -1,0 +1,30 @@
+body {
+    background-color: fufufu;
+}
+.btn{
+	position: relative;
+	padding 10px;
+}
+
+.create_agent{
+	position: relative;
+	padding: 5px;
+}
+
+.list{
+	text-align: center;
+}
+    .btn-primary {
+	font-weight: 700;
+	font-size: 20px;
+	border-radius: 5px;
+	margin-bottom: 0px;
+	color: #fff;
+	background-color: #0b349d;
+	margin: 0 auto;
+	width: 350px;
+	display: block;
+	border: none;
+	padding: 12px 20px;
+	padding-top: 15px;
+}

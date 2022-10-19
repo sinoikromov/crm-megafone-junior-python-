@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<a class="btn btn-outline-primary" href="{% url 'list_client' %}"
+   role="button">Go to List Client
+</a>
+<a class="btn btn-outline-primary" href="{% url 'create_client_problem' client.pk %}"
+   role="button">Create Problem
+</a>
+
+<hr/>
+<div class = "create_problem">
+
+</div>
+<h1 class="list">List Problem Client  {{ client.first_name }} {{ client.last_name }}</h1>
+<table class="table table-dark table-hover table-bordered border-primary">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Owner Name </th>
+      <th scope="col">Owner Surname </th>
+      <th scope="col">Owner patronymic</th>
+      <th scope="col">status</th>
+      <th scope="col">date_added </th>
+      <th scope="col">category</th>
+        <th scope="col">Detail</th>
+    </tr>
+  </thead>
+
+ {% for problem in list_problem %}
+
+
+  <tbody>
+    <tr>
+      <th scope="row">{{ problem.pk }}</th>
+      <td>{{ problem.client.first_name }}</td>
+      <td>{{ problem.client.last_name }}</td>
+      <td>{{ problem.client.patronymic }}</td>
+      <td>{{ problem.status }}</td>
+      <td>{{ problem.date_added }}</td>
+      <td>{{ problem.category.title }}</td>
+        <td><a href="{% url 'update_problem' problem.pk %}">More</a></td>
+    </tr>
+  </tbody>
+  {% endfor %}
+
+</table>
+
+
+
+{% endblock %}

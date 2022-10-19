@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<hr/>
+<h1 class="list">List Client</h1>
+
+
+<table class="table table-dark table-hover table-bordered border-primary">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name </th>
+      <th scope="col">Surname </th>
+      <th scope="col">patronymic</th>
+      <th scope="col"> was born</th>
+      <th scope="col">age </th>
+      <th scope="col">phone</th>
+      <th scope="col">gender </th>
+      <th scope="col">email </th>
+        <th scope="col">Detail</th>
+    </tr>
+  </thead>
+{% for client in object_list %}
+
+  <tbody>
+    <tr>
+      <th scope="row">{{ client.pk }}</th>
+      <td>{{ client.first_name }}</td>
+      <td>{{ client.last_name }}</td>
+      <td>{{ client.patronymic }}</td>
+      <td>{{ client.was_born }}</td>
+      <td>{{ client.age }}</td>
+      <td>{{ client.phone_number }}</td>
+      <td>{{ client.gender }}</td>
+      <td>{{ client.email }}</td>
+        <td><a href="{% url 'detail_client' client.pk %}">More</a></td>
+    </tr>
+  </tbody>
+
+
+{% endfor %}
+</table>
+
+
+{% endblock %}

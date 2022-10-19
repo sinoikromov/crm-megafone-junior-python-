@@ -1,0 +1,52 @@
+body {
+    background-color: fufufu;
+}
+.btn{
+	position: relative;
+	padding 10px;
+}
+
+.create_agent{
+	position: relative;
+	padding: 5px;
+}
+
+.list{
+	text-align: center;
+	font-size: 50px;
+	font-weight: 700;
+	padding-top: 50px;
+	color: #335AD9;
+}
+    .btn-primary {
+	font-weight: 700;
+	font-size: 20px;
+	border-radius: 5px;
+	margin-bottom: 0px;
+	color: #fff;
+	background-color: #0b349d;
+	margin: 0 auto;
+	width: 350px;
+	display: block;
+	border: none;
+	padding: 12px 20px;
+	padding-top: 15px;
+}
+.form-group{
+    padding-left: 30px;
+    padding-right: 60px;
+    padding-top: 10px;
+
+    }
+
+.list-warning{
+	text-align: center;
+	font-size: 30px;
+	font-weight: 400;
+	padding-top: 30px;
+	color: red;
+}
+
+
+
+

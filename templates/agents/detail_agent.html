@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<a class="btn btn-primary" href="{% url 'list_agent' %}"
+   role="button">Go to List Agent
+</a>
+<hr/>
+<div class="card">
+  <div class="card-body">
+    <p class="about">Name : {{ agents.first_name }}</p>
+  </div>
+    <div class="card-body">
+    <p class="about">Surname : {{ agents.last_name }} </p>
+    </div>
+    <div class="card-body">
+    <p class="about">age: {{ agents.age }} </p>
+  </div>
+    <div class="card-body">
+    <p class="about"> phone_number: {{ agents.phone_number }}</p>
+  </div>
+  
+    <div class="card-body">
+    <p class="about">created at: {{ agents.date_added }} </p>
+  </div>
+    <div class="card-body">
+    <p class="about"> gender: {{ agents.gender }}</p>
+   </div>
+    <div class="card-body">
+    {% if agents.is_front_agent %}
+      <p class="about">type : front_agent</p>
+    {% else %}
+      <p class="about">type: beck_agent</p>
+  </div>
+  {% endif %}
+</div>
+
+
+<hr/>
+<a class = 'btn btn-outline-primary my-2' href="{% url 'update_agent' agents.pk %}"> update</a>
+<a class = 'btn btn-outline-primary my-2' href="{% url 'delete_agent' agents.pk %}"> delete</a>
+{% endblock %}
+

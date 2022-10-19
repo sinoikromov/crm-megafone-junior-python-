@@ -8,9 +8,15 @@ class AgentForm(forms.ModelForm):
         fields = (
             'first_name',
             'last_name',
+            'password',
+            'email',
             'is_front_agent',
             'is_back_agent',
             'age',
             'phone_number',
+            'gender',
+
 
         )
+
+

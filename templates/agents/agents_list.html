@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<hr/>
+<h1 class="list">List Agent</h1>
+<div class = "create_agent">
+    <a class="btn btn-outline-primary" href="{% url 'create_agent' %}"
+   role="button">Create a new Agent
+</a>
+</div>
+
+<table class="table table-dark table-hover table-bordered border-primary">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name </th>
+      <th scope="col">Surname </th>
+      <th scope="col">Job</th>
+        <th scope="col">Detail</th>
+    </tr>
+  </thead>
+{% for agent in object_list %}
+
+  <tbody>
+    <tr>
+      <th scope="row">{{ agent.pk }}</th>
+       <td>{{ agent.first_name }}</td>
+      <td>{{ agent.last_name }}</td>
+        {% if agent.is_front_agent %}
+        <td>front_agent</td>
+         {% else %}
+         <td>beck_agent</td>
+       {% endif %}
+        <td><a href="{{ agent.pk }}">More</a></td>
+    </tr>
+  </tbody>
+
+
+{% endfor %}
+</table>
+{% endblock %}
