@@ -57,12 +57,11 @@ class CreateClientProblemView(LoginRequiredMixin, generic.CreateView):
         return super(CreateClientProblemView, self).form_valid(form)
 
 
-class SearchResultsListView(generic.ListView):  # new
+class SearchResultsListView(LoginRequiredMixin, generic.ListView):
     template_name = 'client/search_list.html'
 
     def get_queryset(self):
         query = self.request.GET.get('q')
-        print('query------->>', query)
         client_list = Client.objects.filter(Q(phone_number__icontains=query)
                                             | Q(patronymic__icontains=query)
                                             | Q(email__icontains=query))

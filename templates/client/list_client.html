@@ -9,6 +9,7 @@
    role="button">Create a new Client
 </a>
 </div>
+</div>
   <div class="container-fluid my-3">
     <form class="d-flex" role="search" method="get" action="{% url 'search_results'  %}">
       <input name="q" class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
@@ -24,9 +25,7 @@
       <th scope="col">patronymic</th>
       <th scope="col"> was born</th>
       <th scope="col">age </th>
-      <th scope="col">phone</th>
-      <th scope="col">gender </th>
-      <th scope="col">email </th>
+      <th scope="col">phone_number </th>
         <th scope="col">Detail</th>
     </tr>
   </thead>
@@ -35,14 +34,13 @@
   <tbody>
     <tr>
       <th scope="row">{{ client.pk }}</th>
-      <td>{{ client.first_name }}</td>
+       <td>{{ client.first_name }}</td>
       <td>{{ client.last_name }}</td>
       <td>{{ client.patronymic }}</td>
       <td>{{ client.was_born }}</td>
       <td>{{ client.age }}</td>
       <td>{{ client.phone_number }}</td>
-      <td>{{ client.gender }}</td>
-      <td>{{ client.email }}</td>
+      
         <td><a href="{{ client.pk }}">More</a></td>
     </tr>
   </tbody>
@@ -50,7 +48,6 @@
 
 {% endfor %}
 </table>
-
 <style>
   .container-fluid{
     padding-left: 50%;

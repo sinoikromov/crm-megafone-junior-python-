@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<a class ="btn btn-outline-primary my-2" href="{% url 'list_agent' %}">Go to back</a>
+<a class ="btn btn-outline-primary my-2" href="{% url 'list_problem' %}">Go to back</a>
 <hr/>
 <h2> Update  {{ problem.client.first_name }} {{ problem.client.last_name }} Problem</h2>
 <form method="post" action="">

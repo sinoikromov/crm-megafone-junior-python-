@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
-
+{% if user.is_superuser %}
 <a class ="btn btn-outline-primary my-2" href="{% url 'list_agent' %}">Go to back</a>
 <hr/>
 <h2> Update  {{ agents.first_name }} {{ agents.last_name }} Agent</h2>
 <form method="post" action="">
     {% csrf_token %}
-    {{ form.as_p}}
+   {{ form|crispy }}
     <button class="btn btn-primary my-2" type="submit">Submit</button>
 </form>
-
+{% endif %}
 {% endblock %}

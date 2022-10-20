@@ -75,6 +75,7 @@ class Agent(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
     phone_number = models.CharField(max_length=20)
     age = models.IntegerField(default=0)
+    # was_born = models.DateField(default='2000-12-30')
 
     class Meta:
         verbose_name = 'Agent List'

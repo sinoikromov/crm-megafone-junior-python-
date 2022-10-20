@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-
+{% if user.is_superuser %}
 <a  class = 'btn btn-outline-primary my-2' href="/">Go to back</a>
 <hr/>
 <h2 class = 'list'> Create a new Agent</h2>
@@ -10,4 +10,5 @@
     {{ form|crispy }}
     <button class = 'btn btn-primary my-2' type="submit">Submit</button>
 </form>
+{% endif %}
 {% endblock %}

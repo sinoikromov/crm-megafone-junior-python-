@@ -3,12 +3,17 @@
 {% block content %}
 
 <hr/>
+<div class="btn-group my-3" role="group" aria-label="Basic example">
+  <a  href="{% url 'active_status' %}" type="button" class="btn btn-outline-primary my-3"><p class="text_status">Active Status({{ active }})</p></a>
+  <a  href="{% url 'done_status' %}" type="button" class="btn btn-outline-primary my-3"><p class="text_status">Done Status({{ done }})</p></a>
+  <a  href="{% url 'canceled_status' %}" type="button" class=" btn btn-outline-primary my-3"><p class="text_status">Canceled Status({{ canceled }})</p></a>
+</div>
 <h1 class="list">List Problem</h1>
 <div class = "create_agent my-4">
-    <a class="btn btn-outline-primary" href="{% url 'create_problem' %}"
+    <a class="btn btn-primary my-3" href="{% url 'create_problem' %}"
    role="button">Create Problem
 </a>
-  <a class="btn btn-outline-primary" href="{% url 'create_cat' %}"
+  <a class="btn btn-primary" href="{% url 'create_cat' %}"
    role="button">Create Category
 </a>
 </div>
@@ -44,4 +49,29 @@
 
 {% endfor %}
 </table>
+<style>
+  .btn-outline-primary{
+    margin: 20px;
+    width: 300px;
+    height: 70px;
+  }
+  .btn-group{
+    margin-left: 25%;
+ 
+  padding-right: 50px;
+  background-color: #373b3e;
+  border-radius: 5px;
+
+
+  }
+  .btn-primary{
+    margin: 0;
+    width: 350px
+  }
+  .text_status{
+    font-size: 30px;
+    text-decoration: center;
+  }
+
+</style>
 {% endblock %}

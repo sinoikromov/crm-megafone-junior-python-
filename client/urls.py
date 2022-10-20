@@ -1,7 +1,8 @@
 from django.urls import path
 from .views import (
     ListClientView, CreateClientView, DetailClientView,
-    DeleteClientView, CreateClientProblemView, SearchResultsListView)
+    DeleteClientView, CreateClientProblemView, SearchResultsListView,
+    )
 
 urlpatterns = [
     path('', ListClientView.as_view(), name='list_client'),
